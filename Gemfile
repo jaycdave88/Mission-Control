@@ -40,5 +40,6 @@ gem 'spring',        group: :development
 
 gem 'capybara', group: [:test, :development]
 gem 'rspec-rails', group: [:test, :development]
+gem 'database_cleaner', group: [:test]
 
 
