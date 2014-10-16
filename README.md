@@ -27,4 +27,20 @@
     - Head butting - if all else fails
     - Also Have fun :)
     
+###User Stories
++ User can sign up
++ User can log in
++ User can sumbit information from login form
++ User has a sticky timeline
++ User has topics sidebar
++ User can create a new sticky
++ User can add help/ answers on sticky
++ User can search the archive for past stickys
+
+###Stretch Goals
++ User can chat over google hangout
++ User can upload a link 
++ User can upload a photo
+######adding more later
+    
 
