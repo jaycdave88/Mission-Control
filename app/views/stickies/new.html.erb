@@ -1,0 +1,16 @@
+<div class="page-margin-center">
+    <div class="text-center">
+    <h1>Create A Sticky</h1>
+        <%= form_for "sticky", url: stickies_path, method: 'post' do |f| %>
+            <h3><%= f.label :title, class: "heading" %>:</h3>
+            <%= f.text_field :title %>
+            <br>
+            <br>
+            <h3><%= f.label :content, class: "heading" %>:</h3><br>
+            <%= f.text_area :content, rows: 7 %>
+            <p class="text-info">NOTE: you may use <kbd>`</kbd> (the grave accent character) to denote blocks of code.</p>
+            <br>
+            <%= f.submit 'Submit Sticky' %>
+        <% end %>
+    </div>
+</div>
