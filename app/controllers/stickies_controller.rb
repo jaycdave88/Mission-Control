@@ -2,7 +2,7 @@ class StickiesController < ApplicationController
   before_filter :find_sticky
 
   def new
-    
+
   end
 
   def create
@@ -10,9 +10,18 @@ class StickiesController < ApplicationController
 
     redirect_to @sticky
   end
-  
+
   def show
-    find_sticky  
+    find_sticky
+  end
+
+  def edit
+    find_sticky
+  end
+
+  def update
+    find_sticky.update(sticky_params)
+    redirect_to @sticky
   end
 
   private
@@ -23,4 +32,5 @@ class StickiesController < ApplicationController
   def sticky_params
     params.require(:sticky).permit(:title, :content)
   end
+
 end
