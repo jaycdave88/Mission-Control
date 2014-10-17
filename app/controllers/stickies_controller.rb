@@ -5,6 +5,10 @@ class StickiesController < ApplicationController
 
   end
 
+  def index
+    
+  end
+
   def create
     @sticky = Sticky.create(sticky_params)
 
@@ -22,6 +26,11 @@ class StickiesController < ApplicationController
   def update
     find_sticky.update(sticky_params)
     redirect_to @sticky
+  end
+
+  def destroy
+    find_sticky.destroy
+    redirect_to stickies_path
   end
 
   private

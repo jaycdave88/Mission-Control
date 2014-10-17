@@ -51,3 +51,21 @@ feature "Sticky Updating" do
   end
 
 end
+
+feature "Sticky Deletion" do
+  before(:each) do
+    @stickyvictim = Sticky.create(:title=> "blahblah", :content=>
+      "blahblah blahblah")
+  end
+  after(:each) do
+    Sticky.delete_all
+  end
+  # TODO: Should only delete if author
+  scenario "removes a sticky from DB" do
+    visit sticky_path(@stickyvictim)
+    expect{
+      click_button "Delete"
+    }.to change{Sticky.count}.by(-1)
+
+  end
+end

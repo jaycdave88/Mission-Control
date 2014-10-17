@@ -3,7 +3,7 @@
       <div class="center">
         <% if session[:current_user_id] == @sticky.user_id %>
          <h5 class="text-center"><%= link_to "Edit", edit_sticky_path %>
-         <%= link_to "Delete", sticky_path, method: :delete, data: {confirm: "Whoa!"} %></h5>
+         <%= button_to "Delete", sticky_path, method: :delete, data: {confirm: "Whoa!"} %></h5>
         <% end %>
     <br>
     <br>
