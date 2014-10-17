@@ -5,9 +5,6 @@ class HelpsController < ApplicationController
   end
 
   def create
-    puts "*********************"
-    p params
-    puts "*********************"
     @help = Help.create(
       :title=> params[:help][:title],
       :content=>params[:help][:content]
