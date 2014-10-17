@@ -1,4 +1,12 @@
 feature "Sticky Creation" do
+  scenario 'at the stickies index page there should be a button to create a new sticky' do
+
+    visit stickies_path
+    expect(page).to have_button('create a new sticky!')
+
+  end
+
+
   scenario "at the sticky creation page there is a form to create a new sticky" do
     visit new_sticky_path
 

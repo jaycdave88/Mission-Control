@@ -21,8 +21,11 @@ Rails.application.routes.draw do
     get 'users/:id' => 'users#show', as: :show_users
 
 
+    resources :stickies do
+      resource :helps
+    end
 
-    resources :stickies
+
   # Example resource route with options:
   #   resources :products do
   #     member do

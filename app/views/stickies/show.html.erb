@@ -2,12 +2,11 @@
     <h1 class="heading text-center"><%= @sticky.title %></h1>
       <div class="center">
         <% if session[:current_user_id] == @sticky.user_id %>
-         <h5 class="text-center"><%= link_to "Edit", edit_sticky_path %>
-         <%= button_to "Delete", sticky_path, method: :delete, data: {confirm: "Whoa!"} %></h5>
+          <h5 class="text-center"><%= link_to "Edit", edit_sticky_path %>
+          <%= button_to "Delete", sticky_path, method: :delete, data: {confirm: "Whoa!"} %></h5>
         <% end %>
-    <br>
-    <br>
-      <div>
+      </div>
+      <div id="content-blocks">
         <% blocks = @sticky.content.split("`") %>
         <% blocks.each_with_index do |block, index| %>
             <% if index%2==0 %>
@@ -16,11 +15,14 @@
                 <pre><%=block%></pre>
             <% end %>
         <%end%>
-        <br>
       </div>
-        <h2>Responses: </h2>
-        <ul>
+      <div>
+        <h2>Help response: </h2>
+
+        <ul id="helps">
 
         </ul>
       </div>
+
+      <%= button_to "Help", new_sticky_helps_path(@sticky), method: "get" %>
     </div>

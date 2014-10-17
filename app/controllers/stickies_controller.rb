@@ -6,13 +6,16 @@ class StickiesController < ApplicationController
   end
 
   def index
-    
+    @stickies = Sticky.all
+
   end
 
   def create
     @sticky = Sticky.create(sticky_params)
 
     redirect_to @sticky
+
+
   end
 
   def show
