@@ -33,8 +33,21 @@ feature "User can sign up for app" do
     visit root_path
     click_link 'Sign Up'
     expect(page).to have_content 'Sign Up'
-
   end
+
+  scenario "user fills out signup form to create new user" do
+    user = User.create(name: "Bob", email: "bob@gmail.com", phase: '1', password: "ilovecookies")
+
+    visit new_user_path
+    fill_in "Name", with: user.name
+    fill_in 'Email', with: user.email
+    fill_in 'Phase', with: user.phase
+    fill_in 'Password', with: user.password
+    click_button 'Create User'
+    expect(page).to have_content("Welcome, bob@gmail.com!")
+  end
+
+
 
 end
 
