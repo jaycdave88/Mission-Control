@@ -25,6 +25,8 @@ feature "User can log into app" do
     expect(page).to have_content("Welcome, bob@gmail.com!") 
   end
 
+  # this is so I can push this make sure you delete this after
+
 
 end
 
