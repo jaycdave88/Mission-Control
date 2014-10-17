@@ -15,8 +15,10 @@ Rails.application.routes.draw do
     resources :users
 
 
-    get 'user/login' => 'users#login', as: :login
+    get 'sessions/new' => 'users#login', as: :login
+    post '/sessions' => 'users#create_session', as: :new_session
 
+    get 'users/:id' => 'users#show', as: :show_users
 
     resources :stickies
   # Example resource route with options:
