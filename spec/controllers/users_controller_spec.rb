@@ -1,4 +1,4 @@
-require 'rails_helper'
+frequire 'rails_helper'
 
 RSpec.describe UsersController, :type => :controller do
 
