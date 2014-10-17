@@ -17,15 +17,37 @@ end
 
 feature "Sticky Updating" do
   before(:each) do
-    @stickyballs = Sticky.create(:title=> "blahblah", :content=>
+    @stickywicket = Sticky.create(:title=> "blahblah", :content=>
       "blahblah blahblah")
+  end
+  after(:each) do
+    Sticky.delete_all
   end
 
   scenario "at the sticky updating page there is a form to update a new sticky" do
 
-    visit edit_sticky_path(@stickyballs.id)
+    visit edit_sticky_path(@stickywicket.id)
 
-
-    expect(page).to have_selector("form[method='put'][action='#{sticky_path}']")
+    # expect(page).to have_selector("form[action='#{sticky_path}']")
+     expect(page).to have_selector("form[method='post']")
   end
+
+  scenario "submitting the update form updates the thing to have the new values" do
+
+      visit edit_sticky_path(@stickywicket.id)
+      fill_in 'Title', with: 'TEST TITLE!'
+      fill_in 'Content', with: 'TEST CONTENT!!'
+      click_button 'Update Sticky'
+
+      url = URI.parse(current_url)
+
+      expect(url.path).to eq(sticky_path(@stickywicket))
+
+      expect(page).to have_content('TEST TITLE!')
+
+      expect(@stickywicket.reload.title).to eq('TEST TITLE!')
+
+      expect(@stickywicket.content).to eq('TEST CONTENT!!')
+  end
+
 end
