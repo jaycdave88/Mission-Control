@@ -3,14 +3,14 @@ class UsersController < ApplicationController
 	def index
 	end
 
+	def new
+		@user = User.new
+	end
+
 	def login
 		@user = User.new
 	end
 
-	def new
-		User.find_by(email: params[:email])
-
-	end
 
 	def create_session
 		user = User.find_by(email: params[:email])
@@ -23,10 +23,17 @@ class UsersController < ApplicationController
 		end
 	end
 
-	# def create
-	# 	User.create(params[:user])
+	def create
+		@user = User.new(params.require(:user).permit(:name, :email, :phase, :password))
+    if @user.save
+      flash[:notice] = "Signed up!"
+      session[:user_id] = @user.id
+      redirect_to root_path
+    else
+      render "new"
+    end
 
-	# end
+	end
 
 
 	def show

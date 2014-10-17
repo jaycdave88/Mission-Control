@@ -2,7 +2,7 @@
 require 'capybara/rspec'
 
 feature "User can log into app" do
-  
+
   # before :each do
   #   visit '/user/login'
   # end
@@ -22,13 +22,21 @@ feature "User can log into app" do
     fill_in 'Password', with: user.password
     click_button 'Log In'
     expect(page).to have_content("Home Page")
-    expect(page).to have_content("Welcome, bob@gmail.com!") 
+    expect(page).to have_content("Welcome, bob@gmail.com!")
   end
-
-  # this is so I can push this make sure you delete this after
-
 
 end
 
- 
-  
+feature "User can sign up for app" do
+  scenario "on click user will be brought to sign up form" do
+
+    visit root_path
+    click_link 'Sign Up'
+    expect(page).to have_content 'Sign Up'
+
+  end
+
+end
+
+
+
