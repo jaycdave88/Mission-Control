@@ -20,6 +20,7 @@ class StickiesController < ApplicationController
 
   def show
     find_sticky
+    @helps = @sticky.helps
   end
 
   def edit

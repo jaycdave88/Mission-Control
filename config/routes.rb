@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
 
     resources :stickies do
-      resource :helps
+      resources :helps
     end
 
 

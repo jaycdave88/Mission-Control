@@ -20,9 +20,11 @@
         <h2>Help response: </h2>
 
         <ul id="helps">
-
+          <% @helps.each do |help| %>
+            <li><%= link_to help.title, edit_sticky_help_path(@sticky, help) %></li>
+          <% end %>
         </ul>
       </div>
 
-      <%= button_to "Help", new_sticky_helps_path(@sticky), method: "get" %>
+      <%= button_to "Help", new_sticky_help_path(@sticky), method: "get" %>
     </div>
