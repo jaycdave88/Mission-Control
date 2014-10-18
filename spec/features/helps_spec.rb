@@ -1,4 +1,4 @@
-feature "helps" do
+feature "Helps" do
 
   before(:each) do
     @stickywicket = Sticky.create(:title=> "blahblah", :content=>
@@ -26,6 +26,19 @@ feature "helps" do
 
   end
 
+  scenario "can be updated" do
+    @help = @stickywicket.helps.create(title: "Wrong Title", content: "Wrong Content")
 
+    visit edit_sticky_help_path(@stickywicket, @help)
+
+    fill_in "Title", with: "Updated Title"
+    fill_in "Content", with: "Updated Content"
+    click_button 'Update Help'
+    @help.reload
+
+    # expect(page).to have_content('Updated')
+    expect(@help.title).to eq('Updated Title')
+    expect(@help.content).to eq('Updated Content')
+  end
 
 end
