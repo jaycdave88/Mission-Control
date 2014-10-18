@@ -22,7 +22,7 @@ feature "User can log into app" do
     fill_in 'Password', with: user.password
     click_button 'Log In'
     expect(page).to have_content("Home Page")
-    expect(page).to have_content("Welcome, bob@gmail.com!")
+    expect(page).to have_content("Welcome, Bob!")
   end
 
 end
@@ -44,7 +44,7 @@ feature "User can sign up for app" do
     fill_in 'Phase', with: user.phase
     fill_in 'Password', with: user.password
     click_button 'Create User'
-    expect(page).to have_content("Welcome, bob@gmail.com!")
+    expect(page).to have_content("Welcome, Bob!")
   end
 
 
