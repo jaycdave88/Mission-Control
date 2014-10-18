@@ -12,7 +12,7 @@ class StickiesController < ApplicationController
 
   def create
     @sticky = Sticky.create(sticky_params)
-
+    @sticky.update(user_id: session[:user_id])
     redirect_to @sticky
 
 

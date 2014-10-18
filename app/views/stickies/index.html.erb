@@ -1,7 +1,7 @@
 <h1>stickies!</h1>
 <ul id="sticky-list">
   <% @stickies.each do |sticky| %>
-    <p><%= sticky.title  %></p>
+    <p><%= link_to sticky.title, sticky_path(sticky)  %></p>
   <% end %>
 </ul>
 <%= button_to "create a new sticky!", new_sticky_path, method: :get %>
