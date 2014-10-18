@@ -1,2 +1,10 @@
-<h1>Welcome, <%=@user.email%>!</h1>
+<h1>Welcome, <%=@user.name%>!</h1>
 <h3>Home Page</h3>
+<%= link_to "Raise a sticky", new_sticky_path %>
+
+<h3>Your stickies</h3>
+<ul>
+  <% @stickies.each do |sticky| %>
+    <li><%=link_to sticky.title, edit_sticky_path %></li>
+  <% end %>
+</ul>
