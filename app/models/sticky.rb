@@ -11,4 +11,6 @@ class Sticky < ActiveRecord::Base
 	belongs_to :user
 	has_many :helps
 
+	# this is a comment so I can push to heroku
+
 end
