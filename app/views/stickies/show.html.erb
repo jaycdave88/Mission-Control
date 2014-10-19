@@ -19,7 +19,7 @@
       <div>
         <h2>Help response: </h2>
 
-        <ul id="helps">
+        <ul id="helps" class="small-block-grid-3">
           <% @helps.each do |help| %>
             <li><%= link_to help.title, edit_sticky_help_path(@sticky, help) %></li>
           <% end %>

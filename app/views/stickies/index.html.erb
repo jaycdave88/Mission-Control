@@ -1,8 +1,8 @@
 <div class="row">
   <h1>stickies!</h1>
-  <ul id="sticky-list">
+  <ul id="sticky-list" class="small-block-grid-3">
     <% @stickies.each do |sticky| %>
-      <p><%= link_to sticky.title, sticky_path(sticky)  %></p>
+      <li><%= link_to sticky.title, sticky_path(sticky)  %></li>
     <% end %>
   </ul>
   <%= button_to "create a new sticky!", new_sticky_path, method: :get, class: "button radius" %>
