@@ -1,4 +1,4 @@
-  <div class="container">
+  <div class="container row">
     <h1 class="heading text-center"><%= @sticky.title %></h1>
       <div class="center">
         <% if session[:current_user_id] == @sticky.user_id %>
@@ -26,5 +26,5 @@
         </ul>
       </div>
 
-      <%= button_to "Help", new_sticky_help_path(@sticky), method: "get" %>
+      <%= button_to "Help", new_sticky_help_path(@sticky), method: "get", class: "button radius" %>
     </div>

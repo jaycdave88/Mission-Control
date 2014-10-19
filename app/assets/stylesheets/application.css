@@ -12,4 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+pre{
+  background: #eee;
+  color: #333;
+  border-radius: 1em;
+  padding: 1em;
+}

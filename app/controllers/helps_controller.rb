@@ -15,7 +15,6 @@ class HelpsController < ApplicationController
 
   def edit
     find_help
-    p @help
   end
 
   def update
@@ -30,9 +29,7 @@ class HelpsController < ApplicationController
 
   private
   def find_help
-    p params
     @help = Help.find(params[:id]) if params[:id]
-    p @help
   end
 
   def help_params
