@@ -10,7 +10,11 @@
             <%= f.text_area :content, rows: 7 %>
             <p class="text-info">NOTE: you may use <kbd>`</kbd> (the grave accent character) to denote blocks of code.</p>
             <br>
+            <%= f.label :image %>
+            <%= f.file_field :image %>
             <%= f.submit 'Submit Sticky' %>
         <% end %>
     </div>
+
+
 </div>

@@ -30,6 +30,10 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 gem 'rails-backbone'
 
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk'
+
+
 # gem 'rails-api'
 
 # Use unicorn as the app server

@@ -15,6 +15,7 @@
                 <pre><%=block%></pre>
             <% end %>
         <%end%>
+        <%= image_tag @sticky.image.url %>
       </div>
       <div>
         <h2>Help response: </h2>
@@ -25,6 +26,5 @@
           <% end %>
         </ul>
       </div>
-
       <%= button_to "Help", new_sticky_help_path(@sticky), method: "get" %>
     </div>
