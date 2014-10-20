@@ -17,27 +17,27 @@ class StickiesController < ApplicationController
   end
 
   def show
-    find_sticky
+    set_sticky
     @helps = @sticky.helps
     render partial: 'show'
   end
 
   def edit
-    find_sticky
+    set_sticky
   end
 
   def update
-    find_sticky.update(sticky_params)
+    set_sticky.update(sticky_params)
     redirect_to @sticky
   end
 
   def destroy
-    find_sticky.destroy
+    set_sticky.destroy
     redirect_to stickies_path
   end
 
   private
-  def find_sticky
+  def set_sticky
     @sticky = Sticky.find(params[:id])
   end
 
@@ -47,4 +47,3 @@ class StickiesController < ApplicationController
 
 end
 
-# this is just so I can push to heroku
