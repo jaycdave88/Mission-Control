@@ -15,7 +15,9 @@
                 <pre><%=block%></pre>
             <% end %>
         <%end%>
+        <% unless @sticky.image.url == "/images/original/missing.png"  %>
         <%= image_tag @sticky.image.url %>
+        <% end %>
       </div>
       <div>
         <h2>Responses: </h2>
