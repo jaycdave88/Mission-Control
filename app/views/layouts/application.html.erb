@@ -23,6 +23,7 @@
     <section class="top-bar-section">
       <ul class="right">
       <% if session[:user_id] %>
+      <li class="active"><%= link_to "Raise a new sticky!", new_sticky_path %></li>
       <li class="active"><a href="<%= user_path(session[:user_id]) %>">Profile</a></li>
       <li class="active"><a href="">Log Out</a></li>
 
