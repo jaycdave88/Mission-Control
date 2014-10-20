@@ -4,12 +4,12 @@
 
 
   <h3>Your stickies</h3>
-  <ul class="small-block-grid-3">
+  <ul id="sticky-list" class="small-block-grid-3">
     <% @stickies.each do |sticky| %>
-      <li><%=link_to sticky.title, sticky_path(sticky) %>
-      	<% if sticky.user.id == session[:user_id] %>
-      		<p><%=link_to "Delete",sticky_path(sticky), method:"delete" ,class:"label" %></p>
-          <p><%= button_to "Edit", edit_sticky_path, data: {confirm: "Whoa!"} %></p>
+      <li class="sticky yellow"><%=link_to sticky.title, sticky_path(sticky) %>
+      	<% if sticky.user.id == session[:user_id] %><br>
+      		<%=link_to "Delete",sticky_path(sticky), method:"delete" ,class:"label" %>
+          <%= link_to "Edit", edit_sticky_path, class:"label", data: {confirm: "Whoa!"} %>
       	<% end %>
 
       </li>
