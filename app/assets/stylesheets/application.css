@@ -54,7 +54,13 @@ pre{
 #sticky_index{
   color:black;
 }
+
 .text-info{
   color:#323299;
   font-weight: bold
+}
+
+.label {
+  display: inline;
+
 }
