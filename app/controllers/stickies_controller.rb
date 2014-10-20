@@ -2,11 +2,11 @@ class StickiesController < ApplicationController
   before_filter :find_sticky
 
   def new
-
+    @sticky = Sticky.new
   end
 
   def index
-    @stickies = Sticky.all
+    @stickies = Sticky.all.includes(:user)  
 
   end
 
@@ -14,8 +14,6 @@ class StickiesController < ApplicationController
     @sticky = Sticky.create(sticky_params)
     @sticky.update(user_id: session[:user_id])
     redirect_to @sticky
-
-
   end
 
   def show
@@ -43,7 +41,9 @@ class StickiesController < ApplicationController
   end
 
   def sticky_params
-    params.require(:sticky).permit(:title, :content)
+    params.require(:sticky).permit(:title, :content, :image)
   end
 
 end
+
+# this is just so I can push to heroku

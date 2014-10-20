@@ -29,6 +29,12 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'rails-backbone'
+gem 'foundation-rails'
+
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk'
+
+
 
 # gem 'rails-api'
 
@@ -45,5 +51,8 @@ gem 'capybara', group: [:test]
 gem 'rspec-rails', group: [:test, :development]
 gem 'selenium-webdriver', group: [:test]
 gem 'database_cleaner', group: [:test]
+gem 'dotenv-rails', group: [:development]
+gem 'rails_12factor', group: [:production]
+
 
 

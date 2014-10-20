@@ -1,17 +1,15 @@
-<div class="page-margin-center">
+<div class="row">
     <div class="text-center">
     <h1>Update Sticky</h1>
         <%= form_for @sticky do |f| %>
-
-            <h3><%= f.label :title, class: "heading" %>:</h3>
+            <fieldset>
+            <h3><%= f.label :title, class: "label" %></h3>
             <%= f.text_field :title %>
-            <br>
-            <br>
-            <h3><%= f.label :content, class: "heading" %>:</h3><br>
+            <h3><%= f.label :content, class: "label" %></h3>
             <%= f.text_area :content, rows: 7 %>
             <p class="text-info">NOTE: you may use <kbd>`</kbd> (the grave accent character) to denote blocks of code.</p>
-            <br>
-            <%= f.submit 'Update Sticky' %>
+            <%= f.submit 'Update Sticky', class: "button radius" %>
+            </fieldset>
         <% end %>
     </div>
 </div>

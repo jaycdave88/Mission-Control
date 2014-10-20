@@ -1,4 +1,4 @@
-  <div class="container">
+  <div class="container row">
     <h1 class="heading text-center"><%= @sticky.title %></h1>
       <div class="center">
         <% if session[:current_user_id] == @sticky.user_id %>
@@ -15,16 +15,17 @@
                 <pre><%=block%></pre>
             <% end %>
         <%end%>
+        <%= image_tag @sticky.image.url %>
       </div>
       <div>
         <h2>Help response: </h2>
 
-        <ul id="helps">
+        <ul id="helps" class="small-block-grid-3">
           <% @helps.each do |help| %>
             <li><%= link_to help.title, edit_sticky_help_path(@sticky, help) %></li>
           <% end %>
         </ul>
       </div>
+      <%= button_to "Help", new_sticky_help_path(@sticky), method: "get", class: "button radius" %>
 
-      <%= button_to "Help", new_sticky_help_path(@sticky), method: "get" %>
     </div>
