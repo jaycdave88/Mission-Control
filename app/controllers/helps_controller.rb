@@ -2,6 +2,9 @@ class HelpsController < ApplicationController
 
   def new
   end
+  def show
+
+  end
 
   def create
     @sticky = Sticky.find(params[:sticky_id])
