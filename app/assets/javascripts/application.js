@@ -21,4 +21,4 @@
 //= require backbone/mission_control
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+// $(function(){ $(document).foundation(); });

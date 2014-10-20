@@ -45,3 +45,5 @@ class StickiesController < ApplicationController
   end
 
 end
+
+# this is just so I can push to heroku
