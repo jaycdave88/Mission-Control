@@ -6,7 +6,6 @@ class StickiesController < ApplicationController
 
   def index
     @stickies = Sticky.all.includes(:user)
-
   end
 
   def create

@@ -47,10 +47,14 @@ pre{
 
 }
 
-.reveal-modal label, h1, h2{
+.reveal-modal label, h1, h2, p{
   color: white;
 }
 
-.name h1 {
-  color: white;
+#sticky_index{
+  color:black;
+}
+.text-info{
+  color:#323299;
+  font-weight: bold
 }
