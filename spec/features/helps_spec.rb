@@ -2,7 +2,7 @@ feature "Helps" do
 
   before(:each) do
     @stickywicket = Sticky.create(:title=> "blahblah", :content=>
-      "blahblah blahblah")
+      "blahblah blahblah", user_id: 1)
   end
 
   scenario "can be created through a button if loggen in" do
@@ -29,7 +29,7 @@ feature "Helps" do
   end
 
   scenario "can be updated" do
-    @help = @stickywicket.helps.create(title: "Wrong Title", content: "Wrong Content")
+    @help = @stickywicket.helps.create(title: "Wrong Title", content: "Wrong Content", user_id:1)
 
     visit edit_sticky_help_path(@stickywicket, @help)
 

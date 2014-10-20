@@ -12,68 +12,74 @@ feature "Sticky Creation" do
 
     expect(page).to have_selector("form[action='#{stickies_path}']")
   end
+
   scenario "can be created through a form" do
+    page.set_rack_session(user_id: 1)
     visit new_sticky_path
 
     expect{
       fill_in 'Title', with: 'TEST TITLE!'
       fill_in 'Content', with: 'TEST CONTENT!!'
       click_button 'Submit Sticky'
-    }.to change{Sticky.count}.by(1)
-  end
-end
-
-feature "Sticky Updating" do
-  before(:each) do
-    @stickywicket = Sticky.create(:title=> "blahblah", :content=>
-      "blahblah blahblah")
-  end
-  after(:each) do
-    Sticky.delete_all
+      }.to change{Sticky.count}.by(1)
+    end
   end
 
-  scenario "at the sticky updating page there is a form to update a new sticky" do
+  feature "Sticky Updating" do
+    before(:each) do
+      @stickywicket = Sticky.create(:title=> "blahblah", :content=>
+                                    "blahblah blahblah",:user_id=>1)
+    end
+    after(:each) do
+      Sticky.delete_all
+    end
 
-    visit edit_sticky_path(@stickywicket.id)
+    scenario "at the sticky updating page there is a form to update a new sticky" do
+
+      visit edit_sticky_path(@stickywicket.id)
 
     # expect(page).to have_selector("form[action='#{sticky_path}']")
-     expect(page).to have_selector("form[method='post']")
+    expect(page).to have_selector("form[method='post']")
   end
 
   scenario "submitting the update form updates the thing to have the new values" do
 
-      visit edit_sticky_path(@stickywicket.id)
-      fill_in 'Title', with: 'TEST TITLE!'
-      fill_in 'Content', with: 'TEST CONTENT!!'
-      click_button 'Update Sticky'
+    visit edit_sticky_path(@stickywicket.id)
+    fill_in 'Title', with: 'TEST TITLE!'
+    fill_in 'Content', with: 'TEST CONTENT!!'
+    click_button 'Update Sticky'
 
-      url = URI.parse(current_url)
+    url = URI.parse(current_url)
 
-      expect(url.path).to eq(sticky_path(@stickywicket))
+    expect(url.path).to eq(sticky_path(@stickywicket))
 
-      expect(page).to have_content('TEST TITLE!')
+    expect(page).to have_content('TEST TITLE!')
 
-      expect(@stickywicket.reload.title).to eq('TEST TITLE!')
+    expect(@stickywicket.reload.title).to eq('TEST TITLE!')
 
-      expect(@stickywicket.content).to eq('TEST CONTENT!!')
+    expect(@stickywicket.content).to eq('TEST CONTENT!!')
   end
 
 end
 
 feature "Sticky Deletion" do
   before(:each) do
+    User.delete_all
+    @user = User.create(name:"bob", email:"bob@bob.com", password: "123", phase: 2)
     @stickyvictim = Sticky.create(:title=> "blahblah", :content=>
-      "blahblah blahblah")
+                                  "blahblah blahblah",:user_id=>@user.id)
   end
   after(:each) do
     Sticky.delete_all
   end
   # TODO: Should only delete if author
   scenario "removes a sticky from DB" do
-    visit sticky_path(@stickyvictim)
+    page.set_rack_session(user_id: @user.id)
+    visit user_path(:id=>@user.id)
+    expect(page).to have_content "blahblah"
     expect{
-      click_button "Delete"
-    }.to change{Sticky.count}.by(-1)
+      click_link "Delete"
+      }.to change{Sticky.count}.by(-1)
 
+    end
   end
-end

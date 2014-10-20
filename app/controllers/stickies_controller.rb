@@ -1,5 +1,4 @@
 class StickiesController < ApplicationController
-  before_filter :find_sticky
 
   def new
     @sticky = Sticky.new
@@ -11,8 +10,9 @@ class StickiesController < ApplicationController
   end
 
   def create
-    @sticky = Sticky.create(sticky_params)
-    @sticky.update(user_id: session[:user_id])
+    @sticky = Sticky.new(sticky_params)
+    @sticky.user_id = session[:user_id]
+    @sticky.save
     redirect_to @sticky
   end
 
@@ -38,7 +38,7 @@ class StickiesController < ApplicationController
 
   private
   def find_sticky
-    @sticky = Sticky.find(params[:id]) if params[:id]
+    @sticky = Sticky.find(params[:id])
   end
 
   def sticky_params

@@ -17,18 +17,18 @@ ActiveRecord::Schema.define(version: 20141019005939) do
   enable_extension "plpgsql"
 
   create_table "helps", force: true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.integer  "user_id"
-    t.integer  "sticky_id"
+    t.string   "title",      null: false
+    t.text     "content",    null: false
+    t.integer  "user_id",    null: false
+    t.integer  "sticky_id",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "stickies", force: true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.integer  "user_id"
+    t.string   "title",              null: false
+    t.text     "content",            null: false
+    t.integer  "user_id",            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 20141019005939) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phase"
-    t.string   "password_digest"
+    t.string   "name",            null: false
+    t.string   "email",           null: false
+    t.string   "phase",           null: false
+    t.string   "password_digest", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -6,7 +6,12 @@
   <h3>Your stickies</h3>
   <ul class="small-block-grid-3">
     <% @stickies.each do |sticky| %>
-      <li><%=link_to sticky.title, sticky_path(sticky) %></li>
+      <li><%=link_to sticky.title, sticky_path(sticky) %>
+      	<% if sticky.user.id == session[:user_id] %>
+      		<p><%=link_to "Delete",sticky_path(sticky), method:"delete" ,class:"label" %></p>
+      	<% end %>
+
+      </li>
     <% end %>
   </ul>
 </div>

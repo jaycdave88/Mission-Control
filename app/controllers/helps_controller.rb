@@ -7,7 +7,8 @@ class HelpsController < ApplicationController
     @sticky = Sticky.find(params[:sticky_id])
     @sticky.helps.create(
       :title=> params[:help][:title],
-      :content=>params[:help][:content]
+      :content=>params[:help][:content],
+      :user_id=>session[:user_id]
     )
 
     redirect_to @sticky
