@@ -30,6 +30,9 @@ class HelpsController < ApplicationController
     redirect_to stickies_path
   end
 
+  def recent
+  end
+
   private
 
   def help_params
