@@ -9,6 +9,7 @@
       <li><%=link_to sticky.title, sticky_path(sticky) %>
       	<% if sticky.user.id == session[:user_id] %>
       		<p><%=link_to "Delete",sticky_path(sticky), method:"delete" ,class:"label" %></p>
+          <p><%= button_to "Edit", edit_sticky_path, data: {confirm: "Whoa!"} %></p>
       	<% end %>
 
       </li>
