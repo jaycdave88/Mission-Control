@@ -10,7 +10,7 @@
 <div id="StickyModal" class="reveal-modal" data-reveal></div>
 
 <div id="LoginModal" class="reveal-modal" data-reveal>
-  <%= form_tag new_session_path, method: "post" do %>
+  <%= form_tag sessions_path, method: "post" do %>
     <%= label_tag :email %><br>
     <%= email_field_tag :email, params[:email] %><br>
     <%= label_tag :password %><br>
@@ -22,4 +22,3 @@
   <div id="SignupModal" class="reveal-modal" data-reveal>
 
   </div>
-  

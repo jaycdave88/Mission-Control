@@ -14,12 +14,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
     resources :users
 
-
-    get 'sessions/new' => 'users#login', as: :login
-    post '/sessions' => 'users#create_session', as: :new_session
-
-    get 'users/:id' => 'users#show', as: :show_users
-
+    resources :sessions, only: [:new, :create, :destroy]
 
     resources :stickies do
       resources :helps
