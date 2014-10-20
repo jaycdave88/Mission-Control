@@ -41,3 +41,12 @@ pre{
   -ms-transform: rotate(2deg);
   transform: rotate(2deg);
 }
+
+.reveal-modal{
+  background: #333333;
+
+}
+
+.name h1 {
+  color: white;
+}

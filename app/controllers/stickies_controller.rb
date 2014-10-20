@@ -6,7 +6,7 @@ class StickiesController < ApplicationController
   end
 
   def index
-    @stickies = Sticky.all.includes(:user)  
+    @stickies = Sticky.all.includes(:user)
 
   end
 
@@ -19,6 +19,7 @@ class StickiesController < ApplicationController
   def show
     find_sticky
     @helps = @sticky.helps
+    render partial: 'show'
   end
 
   def edit
