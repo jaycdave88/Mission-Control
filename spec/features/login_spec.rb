@@ -7,14 +7,14 @@ feature "User can log into app" do
   #   visit '/user/login'
   # end
 
-  scenario "on click user will be brought to login form" do
+  xscenario "on click user will be brought to login form" do
 
     visit root_path
     click_link 'Log In'
     expect(page).to have_content 'Login'
   end
 
-  scenario "user can fill out form to log in" do
+  xscenario "user can fill out form to log in" do
     user = User.create(name: "Bob", email: "bob@gmail.com", phase: '1', password: "ilovecookies")
 
     visit login_path
@@ -28,7 +28,7 @@ feature "User can log into app" do
 end
 
 feature "User can sign up for app" do
-  scenario "on click user will be brought to sign up form" do
+  xscenario "on click user will be brought to sign up form" do
 
     visit root_path
     click_link 'Sign Up'

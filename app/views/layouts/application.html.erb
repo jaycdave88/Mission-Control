@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %>
+</head>
+<header>
 
-  <body>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to 'Mission Control', stickies_path%></h1>
+      </li>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
-    <script type="text/javascript">$(function(){ $(document).foundation(); });</script>
-  </body>
-</html>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <ul class="right">
+      <% if session[:user_id] %>
+      <li class="active"><a href="<%= user_path(session[:user_id]) %>">Profile</a></li>
+      <li class="active"><a href="">Log Out</a></li>
+
+      <% else %>
+
+        <li class="active"><a href="#" data-reveal-id="LoginModal">Log In</a></li>
+        <li class="active"><a href="/users/new" data-reveal-id="SignupModal">Sign Up</a></li>
+
+      <% end %>
+      </ul>
+    </header>
+
+    <body>
+
+      <%= yield %>
+      <%= javascript_include_tag "application" %>
+    </body>
+    </html>

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
+    render partial: 'new'
 	end
 
 	def login
@@ -19,7 +20,6 @@ class UsersController < ApplicationController
 			redirect_to show_users_path(user.id)
 		else
 			flash[:notice] = "Invalid email or password"
-			render :login
 		end
 	end
 
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to show_users_path(@user.id)
     else
-      render "new"
+      flash[:notice] = "Something went wrong."
     end
 
 	end
@@ -39,6 +39,7 @@ class UsersController < ApplicationController
 	def show
 		@user= User.find(params[:id])
     @stickies = @user.stickies
+
 	end
 
 end
