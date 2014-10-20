@@ -47,6 +47,10 @@ pre{
 
 }
 
+.reveal-modal label, h1, h2{
+  color: white;
+}
+
 .name h1 {
   color: white;
 }
