@@ -1,9 +1,14 @@
   <div class="container row">
     <h1 class="heading text-center"><%= @sticky.title %></h1>
       <div class="center">
-        <% if session[:current_user_id] == @sticky.user_id %>
-          <h5 class="text-center"><%= link_to "Edit", edit_sticky_path %>
-          <%= button_to "Delete", sticky_path, method: :delete, data: {confirm: "Whoa!"} %></h5>
+
+
+        <% if session[:user_id] == @sticky.user_id %>
+          <h5 class="text-center">
+
+          <%= button_to "Delete", sticky_path, method: :delete, data: {confirm: "Whoa!"} %><br>
+          <%= button_to "Edit", edit_sticky_path, method: :get %>
+        </h5>
         <% end %>
       </div>
       <div id="content-blocks">
