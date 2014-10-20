@@ -5,15 +5,17 @@ feature "Helps" do
       "blahblah blahblah")
   end
 
-  scenario "create a new help" do
+  scenario "can be created through a button if loggen in" do
 
+    page.set_rack_session(user_id: 1)
     visit sticky_path(@stickywicket)
 
     expect(page).to have_button("Help")
 
   end
 
-  scenario "click the fucking help button" do
+  scenario "can be created if logged in" do
+    page.set_rack_session(user_id: 1)
     visit sticky_path(@stickywicket)
     click_button "Help"
 
