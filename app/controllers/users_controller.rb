@@ -13,11 +13,10 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "Signed up!"
       session[:user_id] = @user.id
-      redirect_to show_users_path(@user.id)
+      redirect_to user_path(@user.id)
     else
       flash[:notice] = "Something went wrong."
     end
-
 	end
 
 

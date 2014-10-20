@@ -25,11 +25,11 @@
 
         <% if session[:user_id] %>
         <li class="active"><a href="<%= user_path(session[:user_id]) %>">Profile</a></li>
-        <li class="active"><%=link_to "Log Out", session_path, method: :delete %></li>
+        <li class="active"><%=link_to "Log Out", session_path(session[:user_id]), method: :delete %></li>
 
         <% else %>
 
-        <li class="active"><a href="#" data-reveal-id="LoginModal">Log In</a></li>
+        <li class="active"><a href="/sessions/new" data-reveal-id="LoginModal">Log In</a></li>
         <li class="active"><a href="/users/new" data-reveal-id="SignupModal">Sign Up</a></li>
 
         <% end %>

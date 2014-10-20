@@ -3,15 +3,11 @@ require 'capybara/rspec'
 
 feature "User can log into app" do
 
-  # before :each do
-  #   visit '/user/login'
-  # end
-
-  xscenario "on click user will be brought to login form" do
+  scenario "on click user will be brought to login form" do
 
     visit root_path
     click_link 'Log In'
-    expect(page).to have_content 'Login'
+    expect(page).to have_button 'Log In'
   end
 
   xscenario "user can fill out form to log in" do
