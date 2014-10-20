@@ -2,7 +2,7 @@
   <h1 class="text-center">Stickies!</h1>
   <ul id="sticky-list" class="small-block-grid-3">
     <% @stickies.each do |sticky| %>
-      <li class="sticky yellow"><%= link_to sticky.title, sticky_path(sticky), :'data-reveal-id' => "StickyModal"  %><p>raised by <%= sticky.user.name %></p></li>
+      <li class="sticky yellow"><%= link_to sticky.title, sticky_path(sticky), :'data-reveal-id' => "StickyModal"  %><p id="sticky_index">raised by <%= sticky.user.name %></p></li>
     <% end %>
   </ul>
 </div>
