@@ -1,8 +1,8 @@
 feature "Sticky Creation" do
-  scenario 'at the stickies index page there should be a button to create a new sticky' do
+  xscenario 'at the stickies index page there should be a button to create a new sticky' do
 
     visit stickies_path
-    expect(page).to have_button('raise a new sticky!')
+    expect(page).to have_link('Raise a new sticky!')
 
   end
 

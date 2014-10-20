@@ -18,14 +18,16 @@
         <%= image_tag @sticky.image.url %>
       </div>
       <div>
-        <h2>Help response: </h2>
+        <h2>Responses: </h2>
 
         <ul id="helps" class="small-block-grid-3">
           <% @helps.each do |help| %>
-            <li><%= link_to help.title, edit_sticky_help_path(@sticky, help) %></li>
+            <li><%= link_to help.title, sticky_help_path(@sticky, help) %> <p><%= help.content %></p></li>
           <% end %>
         </ul>
       </div>
-      <%= button_to "Help", new_sticky_help_path(@sticky), method: "get", class: "button radius" %>
 
+      <% if session[:user_id] %>
+        <%= button_to "Help", new_sticky_help_path(@sticky), method: "get", class: "button radius" %>
+      <% end %>
     </div>

@@ -51,6 +51,7 @@ gem 'capybara', group: [:test]
 gem 'rspec-rails', group: [:test, :development]
 gem 'selenium-webdriver', group: [:test]
 gem 'database_cleaner', group: [:test]
+gem "rack_session_access", group: [:test]
 gem 'dotenv-rails', group: [:development]
 gem 'rails_12factor', group: [:production]
 
