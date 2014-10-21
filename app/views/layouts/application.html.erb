@@ -35,6 +35,12 @@
 
         <% end %>
       </ul>
+
+      <% if flash[:notice] %>
+      <div id="flash" data-alert class="alert-box info radius">
+        <div class="notice"><%= flash[:notice] %><a href="#" class="close">&times;</a></div>
+        <% end %>
+
     </header>
 
     <body>
@@ -42,9 +48,6 @@
       <%= yield %>
       <%= javascript_include_tag "application" %>
       <script src="https://apis.google.com/js/platform.js" async defer></script>
-      <div id="flash">
-        <% if flash[:notice] %>
-        <div class="notice"><%= flash[:notice] %></div>
-        <% end %>
       </body>
       </html>
+
