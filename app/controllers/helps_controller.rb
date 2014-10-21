@@ -14,7 +14,8 @@ class HelpsController < ApplicationController
     help = @sticky.helps.new(help_params)
     help.user_id =session[:user_id]
     help.save
-    redirect_to @sticky
+    render partial: 'show'
+    # redirect_to @sticky
   end
 
   def edit
