@@ -19,5 +19,3 @@
 //= require backbone_datalink
 //= require backbone/mission_control
 //= require_tree .
-
-$(function(){ $(document).foundation(); });

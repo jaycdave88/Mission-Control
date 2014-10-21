@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  $(document).foundation();
+
   $("a[href='/users/new']").on("click", function(){
   $.ajax("/users/new").done(function(data){
        $("#SignupModal").append(data);
