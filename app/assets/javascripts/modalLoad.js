@@ -8,7 +8,7 @@ $(document).ready(function(){
      });
   })
 
-  $("#sticky-list").on("click", function(e){
+  $("#sticky-list, #hover1").on("click", function(e){
     e.preventDefault();
   $.ajax(e.target.href).done(function(data){
        $("#StickyModal").html(data);
