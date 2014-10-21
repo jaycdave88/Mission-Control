@@ -8,7 +8,7 @@ class StickiesController < ApplicationController
     if params[:query]
 
       @stickies =
-      Sticky.all
+      Sticky.limit(20)
       .where(
         "title LIKE :bob", bob: "%#{params[:query]}%"
       )
