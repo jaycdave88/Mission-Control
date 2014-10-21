@@ -2,7 +2,10 @@ class HelpsController < ApplicationController
 
   def new
   end
+
   def show
+    @help = Help.find(params[:id])
+    render partial: 'show'
 
   end
 
