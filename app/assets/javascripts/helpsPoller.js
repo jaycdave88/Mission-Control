@@ -3,6 +3,7 @@ var HelpsPoller = function(delay, view) {
   this.currentTime = new Date();
   this.currentTime = this.currentTime.toJSON();
   this.view = view;
+  this.count = 0;
 }
 
 HelpsPoller.prototype = {
@@ -11,7 +12,11 @@ HelpsPoller.prototype = {
     var that = this
     $.ajax("/users/"+this.user_id+"/recent/"+this.currentTime)
         .done(function(data){
-          that.view.update(data.length);
+          if(data.length > that.count){
+            that.count = data.length
+            that.view.update(that.count);
+            $("audio").get(0).play()
+          }
         })
         .fail(function(){
           console.log("error");

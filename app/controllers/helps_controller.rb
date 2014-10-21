@@ -6,7 +6,6 @@ class HelpsController < ApplicationController
   def show
     @help = Help.find(params[:id])
     render partial: 'show'
-
   end
 
   def create
@@ -14,8 +13,7 @@ class HelpsController < ApplicationController
     help = @sticky.helps.new(help_params)
     help.user_id =session[:user_id]
     help.save
-    render partial: 'show'
-    # redirect_to @sticky
+    redirect_to stickies_path
   end
 
   def edit
