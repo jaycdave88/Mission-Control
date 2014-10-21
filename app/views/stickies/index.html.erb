@@ -1,5 +1,14 @@
+<div id="search-panel">
+  <form id="search-form">
+    <label for="search">Search Stickies
+      <input type="text" name="query" >
+    </label>
+    <input type="submit" value="Submit">
+  </form>
+</div>
 
 <div class="row">
+
   <h1 class="text-center index-text">Stickies!</h1>
   <ul id="sticky-list" class="sticky-panel small-block-grid-3">
     <% @stickies.each do |sticky| %>
