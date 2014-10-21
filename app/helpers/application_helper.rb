@@ -2,8 +2,6 @@ module ApplicationHelper
   def phase_color sticky
     phase = sticky.user.phase
 
-    p phase
-
     if phase == "1"
       "yellow"
     elsif phase == "2"
