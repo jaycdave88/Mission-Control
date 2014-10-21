@@ -4,9 +4,8 @@
 
         <% if session[:user_id] == @sticky.user_id %>
           <h5 class="text-center">
-            <%= button_to "Delete", sticky_path, method: :delete, data: {confirm: "who you really want to delete this stick??"} %>
-            <br>
-            <%= button_to "Edit", edit_sticky_path, method: :get %>
+            <%= link_to "Delete", sticky_path, method: :delete,class: "label", data: {confirm: "do you really want to delete this sticky??"} %>
+            <%= link_to "Edit", edit_sticky_path, method: :get, class: "label" %>
           </h5>
 
         <% end %>
