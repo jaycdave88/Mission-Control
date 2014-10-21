@@ -29,7 +29,8 @@
 
         <ul id="helps" class="small-block-grid-3">
           <% @helps.each do |help| %>
-            <li><%= link_to help.title, sticky_help_path(@sticky, help) %> <p><%= help.content %></p></li>
+            <li>
+              <h1 class="help-title"><%= link_to help.title, sticky_help_path(@sticky, help), class: 'label' %></h1> <p><%= help.content %></p></li>
           <% end %>
         </ul>
       </div>
