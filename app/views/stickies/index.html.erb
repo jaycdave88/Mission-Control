@@ -15,6 +15,7 @@
 <div id="StickyModal" class="reveal-modal" data-reveal></div>
 
 <div id="LoginModal" class="reveal-modal" data-reveal>
+
   <%= form_tag sessions_path, method: "post" do %>
     <%= label_tag :email %><br>
     <%= email_field_tag :email, params[:email] %><br>

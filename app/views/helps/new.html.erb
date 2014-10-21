@@ -11,7 +11,12 @@
             <%= f.text_area :content, rows: 7 %>
             <p class="text-info">NOTE: you may use <kbd>`</kbd> (the grave accent character) to denote blocks of code.</p>
             <br>
-            <%= f.submit 'Submit Help', class: "button radius" %>
+            <%= f.submit 'Submit Help', class: "button radius", :'data-reveal-id' => "StickyModal"   %>
+
+            <div id="StickyModal" class="reveal-modal" data-reveal></div>
+
+
+
             </fieldset>
         <% end %>
     </div>

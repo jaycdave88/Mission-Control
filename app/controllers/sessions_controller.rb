@@ -21,4 +21,12 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 
+  def status
+    if session[:user_id]
+      render json: {logged: true, user_id: session[:user_id]}
+    else
+      render json: {logged: false}
+    end
+  end
+
 end
