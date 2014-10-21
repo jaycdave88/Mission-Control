@@ -1,0 +1,170 @@
+
+pre{
+  background: #F5F5F5;
+  color: #333;
+  border-radius: 0.5em;
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+.top-bar{
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+.sticky {
+  height: 50px;
+  width: 50px;
+  z-index: 1;
+  color: #333;
+  position: relative;
+  /*width: 300px;*/
+  margin: 70px;
+  padding: 2em;
+  font-size: 30px;
+  box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
+}
+
+
+.sticky-panel {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+body {
+
+  background-size: 100%;
+  position-left: 50%;
+
+  background-image: url("http://static01.nyt.com/images/2014/10/14/us/SUB-JP-BOOTCAMP1/SUB-JP-BOOTCAMP1-superJumbo.jpg");
+
+    /*background-image: url('w3css.gif');*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.backSplash {
+  /*position: fixed;*/
+}
+
+.incline:nth-of-type(1n){
+      transition: 1s;
+
+  transform: rotate(2deg);
+}
+.incline:nth-of-type(2n){
+      transition: 1s;
+
+  transform: rotate(2deg);
+}
+.incline:nth-of-type(3n){
+  transform: rotate(-3deg);
+  transition: 1s;
+}
+.incline:nth-of-type(4n){
+  transform: rotate(-4deg);
+  transition: 1s;
+}
+.incline:nth-of-type(5n){
+  transform: rotate(4deg);
+  transition: 1s;
+}
+.incline:nth-of-type(5n){
+  transform: rotate(-5deg);
+  transition: 1s;
+}
+
+.incline:hover {
+
+  transform: rotate(0deg);
+
+}
+/*.incline:nth-of-type(n+2):hover {
+
+  transform: rotate(-3deg);
+
+}
+*/
+#search-panel{
+  position: fixed;
+  top: 0%;
+  left: 15%;
+  width: 30%;
+
+
+}
+
+#search-form{
+
+  width: 100%;
+  float: left;
+
+}
+
+
+.yellow {
+  background: #FFDD2A;
+}
+
+.pink{
+  background: #EE5E9F;
+}
+
+.orange{
+  background: #F9A55B;
+}
+
+.blue {
+  background: #36A9CE;
+}
+
+.green {
+  background: #D0E17D;
+}
+
+.purple {
+  background: #AE85EC;
+}
+
+.reveal-modal{
+  background: #333333;
+
+}
+
+.reveal-modal label, h1, h2, p{
+  color: white;
+}
+
+#sticky_index{
+  color:black;
+}
+
+.text-info{
+  color:#323299;
+  font-weight: bold
+}
+
+.label {
+  font-size: 0.6em;
+  display: inline;
+
+}
+
+#StickyModal{
+  overflow: scroll;
+}
+
+nav {
+  width: 100%;
+  height: 5%;
+  position: fixed !important;
+  z-index: 99;
+}
+
+.index-text {
+  text-align: center;
+  color: black;
+}
+.top-bar {
+  height: 10%;
+}
+
