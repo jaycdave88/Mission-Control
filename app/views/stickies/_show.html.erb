@@ -2,14 +2,15 @@
     <h1 class="heading text-center"><%= @sticky.title %></h1>
       <div class="center">
 
-
         <% if session[:user_id] == @sticky.user_id %>
           <h5 class="text-center">
+            <%= button_to "Delete", sticky_path, method: :delete, data: {confirm: "who you really want to delete this stick??"} %>
+            <br>
+            <%= button_to "Edit", edit_sticky_path, method: :get %>
+          </h5>
 
-          <%= button_to "Delete", sticky_path, method: :delete, data: {confirm: "Whoa!"} %><br>
-          <%= button_to "Edit", edit_sticky_path, method: :get %>
-        </h5>
         <% end %>
+
       </div>
       <div id="content-blocks">
         <% blocks = @sticky.content.split("`") %>
