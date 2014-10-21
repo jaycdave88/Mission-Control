@@ -31,6 +31,14 @@ class HelpsController < ApplicationController
   end
 
   def recent
+    user = User.find(params[:user_id])
+    stickies = user.stickies
+    helps = []
+    stickies.each do |sticky|
+      helps += sticky.helps.where("created_at >= :date OR updated_at >= :date", date: params[:date])
+    end
+
+    render json: helps
   end
 
   private

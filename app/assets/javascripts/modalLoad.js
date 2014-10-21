@@ -12,4 +12,7 @@ $(document).ready(function(){
        $("#StickyModal").html(data);
      });
   })
+
+  poller = new HelpsPoller(5000, new NotificationView());
+  poller.start();
 })
