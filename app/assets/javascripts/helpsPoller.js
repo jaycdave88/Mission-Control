@@ -15,6 +15,7 @@ HelpsPoller.prototype = {
           if(data.length > that.count){
             that.count = data.length
             that.view.update(that.count);
+            that.view.updateDropdown(data);
             $("audio").get(0).play()
           }
         })
@@ -33,12 +34,20 @@ HelpsPoller.prototype = {
 
 var NotificationView = function(){
   this.area = "#notifications"
+  this.dropdown = "#hover1"
 }
 
 NotificationView.prototype = {
 
   update: function(value){
     $(this.area).find("a").text(value)
+  },
+
+  updateDropdown: function(data){
+    $(this.dropdown).html('<li><a data-reveal-id="StickyModal" href="/stickies/'+data[0].sticky_id+'">'+data[0].title+'</a></li>');
+    for (i = 1; i < data.length; i++){
+      $(this.dropdown).append('<li><a data-reveal-id="StickyModal" href="/stickies/'+data[i].sticky_id+'">'+data[i].title+'</a></li>');
+    }
   }
 
 }
