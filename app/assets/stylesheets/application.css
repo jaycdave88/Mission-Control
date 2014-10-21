@@ -42,7 +42,7 @@ pre{
 }
 
 .yellow {
-  background: #E9E74A;
+  background: #FFDD2A;
 }
 
 .pink{
@@ -55,6 +55,14 @@ pre{
 
 .blue {
   background: #36A9CE;
+}
+
+.green {
+  background: #D0E17D;
+}
+
+.purple {
+  background: #AE85EC;
 }
 
 .reveal-modal{
@@ -79,4 +87,8 @@ pre{
   font-size: 0.6em;
   display: inline;
 
+}
+
+#StickyModal{
+  overflow: scroll;
 }

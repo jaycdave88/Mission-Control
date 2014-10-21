@@ -2,7 +2,7 @@
   <h1 class="text-center">Stickies!</h1>
   <ul id="sticky-list" class="small-block-grid-3">
     <% @stickies.each do |sticky| %>
-      <li class="sticky incline yellow">
+      <li class="sticky incline <%= phase_color(sticky) %>">
 
 
         <%= link_to sticky.title, sticky_path(sticky), :'data-reveal-id' => "StickyModal"  %>
