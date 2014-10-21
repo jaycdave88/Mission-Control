@@ -5,7 +5,7 @@ class StickiesController < ApplicationController
   end
 
   def index
-    @stickies = Sticky.all.includes(:user)
+    @stickies = Sticky.all.includes(:user).shuffle
   end
 
   def create
@@ -45,4 +45,3 @@ class StickiesController < ApplicationController
   end
 
 end
-
