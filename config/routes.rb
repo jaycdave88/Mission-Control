@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
     resources :users
 
+    get 'sessions/status' => 'sessions#status'
+
     resources :sessions, only: [:new, :create, :destroy]
 
     resources :stickies do
