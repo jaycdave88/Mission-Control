@@ -5,7 +5,19 @@ class StickiesController < ApplicationController
   end
 
   def index
-    @stickies = Sticky.all.order(updated_at: :desc).includes(:user)
+    if params[:query]
+
+      @stickies =
+      Sticky.all
+      .where(
+        "title LIKE :bob", bob: "%#{params[:query]}%"
+      )
+
+    else
+      puts 'yo'
+      @stickies = Sticky.limit(20).order(updated_at: :desc).includes(:user)
+    end
+
   end
 
   def create
