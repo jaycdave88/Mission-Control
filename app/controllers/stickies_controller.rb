@@ -5,7 +5,7 @@ class StickiesController < ApplicationController
   end
 
   def index
-    @stickies = Sticky.all.includes(:user).shuffle
+    @stickies = Sticky.all.order(updated_at: :desc).includes(:user)
   end
 
   def create
