@@ -16,6 +16,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user.id)
     else
       flash[:notice] = "Something went wrong."
+      redirect_to root_path
     end
 	end
 
