@@ -23,4 +23,10 @@ $(document).ready(function(){
           poller.start();
         }
       })
+
+  var removeNotice = function(){
+    $("#flash").fadeOut(400, function(){$(this).remove()});
+  }
+
+  setTimeout(removeNotice,4000);
 })
