@@ -11,7 +11,6 @@ HelpsPoller.prototype = {
     var that = this
     $.ajax("/users/1/recent/"+this.currentTime)
         .done(function(data){
-          console.log(data.length);
           that.view.update(data.length);
         })
         .fail(function(){
