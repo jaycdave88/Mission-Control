@@ -33,13 +33,28 @@ pre{
   box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
 }
 
-.yellow {
-  background: #eae672;
+.incline {
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
   -o-transform: rotate(2deg);
   -ms-transform: rotate(2deg);
   transform: rotate(2deg);
+}
+
+.yellow {
+  background: #E9E74A;
+}
+
+.pink{
+  background: #EE5E9F;
+}
+
+.orange{
+  background: #F9A55B;
+}
+
+.blue {
+  background: #36A9CE;
 }
 
 .reveal-modal{
