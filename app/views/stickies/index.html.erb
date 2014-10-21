@@ -1,8 +1,9 @@
-<div class="row"><br><br>
-  <h1 class="index-text">Stickies!</h1>
-  <ul id="sticky-list" class="small-block-grid-3">
+
+<div class="row">
+  <h1 class="text-center index-text">Stickies!</h1>
+  <ul id="sticky-list" class="sticky-panel small-block-grid-3">
     <% @stickies.each do |sticky| %>
-      <li class="sticky incline <%= phase_color(sticky) %>">
+      <li class="sticky incline <%= phase_color(sticky) %>" draggable="true" >
 
 
         <%= link_to sticky.title, sticky_path(sticky), :'data-reveal-id' => "StickyModal"  %>
