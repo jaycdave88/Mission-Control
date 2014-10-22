@@ -27,10 +27,10 @@
       <div>
         <h2>Responses: </h2>
 
-        <ul id="helps">
+        <ul id="helps" class="small-block-grid-2">
           <% @helps.each do |help| %>
-            <li>
-              <h1 class="help-title"><%= link_to help.title, sticky_help_path(@sticky, help), class: 'label' %></h1> <p><%= help.content %></p></li>
+            <li class="sticky blue incline">
+              <h1 class="help-title"><%= link_to help.title, "#" , class: 'label' %></h1> <p><%= help.content %></p></li>
           <% end %>
         </ul>
       </div>

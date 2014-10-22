@@ -3,6 +3,7 @@
     <h1>Create A Help</h1>
         <%= form_for "help", url: sticky_helps_path, method: 'post' do |f| %>
             <fieldset>
+                <legend>Assistance</legend>
             <h3><%= f.label :title, class: "label" %></h3>
             <%= f.text_field :title %>
             <br>
