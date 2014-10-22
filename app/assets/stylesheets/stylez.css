@@ -10,7 +10,7 @@ pre{
 .top-bar{
   position: fixed;
   width: 100%;
-  z-index: 10;
+  z-index: 1000;
 }
 .sticky {
   height: 50px;
@@ -44,9 +44,11 @@ body {
 }
 
 .backSplash {
+
   height: 100%;
   width: 100%;
   background-color: black;
+
 }
 
 .incline:nth-of-type(1n){
