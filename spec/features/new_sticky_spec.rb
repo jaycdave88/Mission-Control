@@ -13,12 +13,12 @@ feature "Sticky Creation" do
     expect(page).to have_selector("form[action='#{stickies_path}']")
   end
 
-  scenario "can be created through a form" do
+  scenario "through a form" do
     @user = User.create(name:"bob", email:"bob@bob.com", password: "123", phase: 2)
     page.set_rack_session(user_id: 1)
     visit user_path(@user)
 
-    click_link 'Raise a sticky'
+    click_link 'Raise a new sticky!'
 
     # expect{
     #   fill_in 'Title', with: 'TEST TITLE!'
