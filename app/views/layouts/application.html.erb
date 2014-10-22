@@ -9,73 +9,15 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen:700' rel='stylesheet' type='text/css'>
 </head>
-<body>
-  <div >
-
-  <video class="backSplash" id="videoDBC" preload="auto" autoplay="true" loop="loop" muted="muted">
-
-
-    <source src=<%=asset_path('gopher-snakes-2014.mp4')  %> type="video/mp4">
-  </video>
-
-  </div>
-
-<header>
-
-  <a href="http://chat-test-dbc.herokuapp.com/" onclick="javascript:void window.open('http://chat-test-dbc.herokuapp.com/','1413931469448','width=400,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');return false;">Chat</a>
-
-
-  <nav class="top-bar" data-magellan-expedition="fixed">
-
-    <ul class="title-area">
-      <li class="name">
-        <h1><%= link_to(image_tag("mission_control-small-logo.jpg", :alt=>"logo", title: "Mission Control", :id=>"logo-img"), stickies_path)%></h1>
-      </li>
-      <!-- <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> -->
-    </ul>
-
-    <div id="search-panel">
-      <form id="search-form">
-        <label for="search">Search Stickies
-        </label>
-        <input type="text" name="query" >
-        <input type="submit" class="button search-button inline" value="Submit">
-      </form>
-    </div>
-
-    <section class="top-bar-section">
-      <ul class="right ">
-
-        <% if session[:user_id] %>
-          <ul id="hover1" class="f-dropdown" data-dropdown-content>
-            <li><a href="#">Nothing to display</a></li>
-          </ul>
-          <li class="active" id="notifications"><%= link_to "0", "#", data:{ dropdown: "hover1", options: "is_hover:true"}%></li>
-          <li class="active"><%=link_to "Raise a new sticky!", new_sticky_path %></li>
-          <li class="active"><a href="<%= user_path(session[:user_id]) %>">Profile</a></li>
-          <li class="active"><%=link_to "Log Out", session_path(session[:user_id]), method: :delete %></li>
-
-        <% else %>
-
-          <li class="active"><a href="/sessions/new" data-reveal-id="LoginModal">Log In</a></li>
-          <li class="active"><a href="/users/new" data-reveal-id="SignupModal">Sign Up</a></li>
-
-        <% end %>
-      </ul>
-
-      <% if flash[:notice] %>
-      <div id="flash" data-alert class="alert-box info radius">
-        <div class="notice"><%= flash[:notice] %><a href="#" class="close">&times;</a></div>
-        <% end %>
-
-    </header>
-
-
-      <%= yield %>
-      <%= javascript_include_tag "application" %>
-      <script src="https://apis.google.com/js/platform.js" async defer></script>
-      <%= audio_tag "notification-short.mp3" %>
-      </body>
-      </html>
+  <body>
+    <%= render partial: 'header'%>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <%= audio_tag "notification-short.mp3" %>
+    <footer class="text-center red"><h1>Brought to you by Becca, Jay, Joan &amp; Michael</h1></footer>
+  </body>
+</html>
 

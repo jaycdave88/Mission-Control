@@ -1,11 +1,11 @@
 <div class="row">
     <div class="text-center">
-    <h1>Create A Sticky</h1>
         <%= form_for "sticky", url: stickies_path, method: 'post' do |f| %>
             <fieldset>
-            <h2><%= f.label :title, class: "label" %></h2>
+            <legend>Create A Sticky</legend>
+            <h2><%= f.label :title, class: "label radius" %></h2>
             <%= f.text_field :title %>
-            <h2><%= f.label :content, class: "label" %></h2>
+            <h2><%= f.label :content, class: "label radius" %></h2>
             <%= f.text_area :content, rows: 7 %>
             <p class="text-info">NOTE: you may use <kbd>`</kbd> (the grave accent character) to denote blocks of code.</p>
 
@@ -15,9 +15,6 @@
 
             <%= f.submit 'Submit Sticky', class: "button" %>
             </fieldset>
-
         <% end %>
     </div>
-
-
 </div>

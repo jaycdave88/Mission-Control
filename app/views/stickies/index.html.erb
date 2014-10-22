@@ -2,7 +2,7 @@
 
 <div class="row">
 
-  <h1 class="text-center index-text">Stickies!</h1>
+  <h1 class="text-center title">Stickies!</h1>
   <ul id="sticky-list" class="sticky-panel small-block-grid-3">
     <% @stickies.each do |sticky| %>
       <li class="sticky incline <%= phase_color(sticky) %>" draggable="true" >
@@ -31,3 +31,5 @@
   <div id="SignupModal" class="reveal-modal" data-reveal>
 
   </div>
+
+<%= render partial: "slider"%>
