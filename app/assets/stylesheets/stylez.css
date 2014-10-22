@@ -202,6 +202,10 @@ footer{
   color: #F5F5F5;
 }
 
+.help-title a{
+  color: #F5F5F5;
+}
+
 #StickyModal{
   overflow: scroll;
 }
