@@ -4,7 +4,7 @@ $(document).ready(function(){
 
   $("a[href='/users/new']").on("click", function(){
   $.ajax("/users/new").done(function(data){
-       $("#SignupModal").append(data);
+       $("#SignupModal").html(data);
      });
   })
 
